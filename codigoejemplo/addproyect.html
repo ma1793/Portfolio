@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <link rel="stylesheet" type="text/css" href="style2.css">
+	
+</head>
+
+<body>
+	<script>
+		var arr1 = [];
+		function show_AddCurso() {
+			 var x = document.getElementById("selectCurso").value;
+			 if(x=='0'){
+				document.getElementById('addCurso').style.display = 'inline';
+			 }
+		}
+		function hide_AddCurso() {
+			 document.getElementById('addCurso').style.display = 'none';
+		}
+		function evalCod() {
+			 
+			 document.getElementById('addCurso').style.display = 'none';
+		}
+		function AddCurso(){
+			var x = document.getElementById('selectCurso');
+			var xmlhttp;
+			if (window.XMLHttpRequest)
+			{// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp=new XMLHttpRequest();
+			}
+			else
+			{// code for IE6, IE5
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+				xmlhttp.onreadystatechange=function()
+			
+			if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+				var option = document.createElement("option");
+				option.value = xmlhttp.responseText;
+				option.text = document.getElementById("CurCod").value + "  " +document.getElementById("CurNom").value;
+				var len = document.getElementById("selectCurso").options.length;
+				x.add(option,len-1);
+				x.selectedIndex = len -1;
+			}
+			
+			xmlhttp.open("GET","addCurso.php?CurCod="+document.getElementById("CurCod").value + "&CurNom=" +document.getElementById("CurNom").value,true);
+			xmlhttp.send();	
+			 
+			 hide_AddCurso();
+		}
+	</script>	
+	<div id="header"><h1>Add Project</h1></div>
+        <div>
+            <form name="myForm" action="saveproyect.php" method="get">
+                Proyect Name: <input type="text" name="fname"><br>
+                Image URL:   <input type="text" name="imgURL"><br>
+                <div id="addCurso" style="display: none;">
+                	Codigo: <input type="text" onblur="evalCod()" name="CurCod" id="CurCod"><br>
+                	Nombre: <input type="text" name="CurNom" id="CurNom"><br>
+                	<button type="button" onclick="AddCurso()">Agregar</button>
+                	<button type="button" onclick="hide_AddCurso()">Cancelar</button><br>
+                </div>
+                Curso:  <select id="selectCurso" onchange="show_AddCurso()" name="cars">
+                			<option value="-1" selected>Seleccione un curso</option>
+							<?php
+							echo "<option value=\"$row[id]\">$CodNomEstructuras</option>
+							<option value="2">IC-018 Interfaces</option>
+							<option value="3">IC-019 Web</option>
+							?>
+							<option value="0">Nuevo Curso</option>
+						</select><br><br>
+						
+						<div id="addCurso" style="display: none;">
+		                	Codigo: <input type="text" name="CurCod"><br>
+		                	Nombre: <input type="text" name="CurNom"><br><br>
+		                </div><br>
+                Project Description: <br> <textarea name="description" rows="10" cols="30"></textarea> <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+	<div id="proyectos" style="margin: 30;" align="center">
+
+	</div>
+        
+</body>
+
+</html>	
