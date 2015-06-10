@@ -8,12 +8,14 @@ echo
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="stylesheet" type="text/css" href="../../assets/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../assets/libs/font-awesome/css/font-awesome.css">
+    
 
     <script src="../../assets/libs/jquery/jquery-2.1.3.min.js" type="text/javascript"></script>
-    <script src="../../assets/libs/bootstrap/bootstrap.js" type="text/javascript"></script>
+    
+    <script src="../../assets/js/rest.js" type="text/javascript"></script>
     
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">

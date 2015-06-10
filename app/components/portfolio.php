@@ -2,41 +2,10 @@
 <html lang="en">
 
     <head>
-    <meta charset="utf-8">
-    <title>Stephen VS</title>
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <link rel="stylesheet" href="../../assets/libs/bootstrap/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="../../assets/css/global.css">
-    <link rel="stylesheet" href="../../assets/libs/font-awesome/css/font-awesome.css">
-    
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    
-
-    
-    <script src="../../assets/libs/jquery/jquery.js" type="text/javascript"></script>
-    
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../../assets/libs/bootstrap/bootstrap.js" type="text/javascript"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="../../assets/libs/classie/classie.js"></script>
-    <script src="../../assets/libs/cbpAnimatedHeader/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="../../assets/libs/bootstrap/jqBootstrapValidation.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../../assets/libs/freelancer/freelancer.js"></script>
+        <?php include '../shared/web/header/header.php'; ?>
     </head>
 
     <body id="page-top" class="index">
-
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top" style="padding: 0px">
             <div class="container">
@@ -48,7 +17,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#page-top">Stephen VS</a>
+                    <a class="navbar-brand" href="#page-top"><div class="C_nombreTitulo"></div></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -88,9 +57,9 @@
                             <div class="profile-pict"></div>
                         </div>
                         <div class="intro-text">
-                            <span class="name">Stephen VS</span>
+                            <span class="name"><div class="C_nombreTitulo"></div></span>
                             <hr class="star-light">
-                            <span class="skills">Web Developer - Computer Engineering Student - Embedded Systems</span>
+                            <span class="skills"></span>
                         </div>
                     </div>
                 </div>
@@ -155,111 +124,10 @@
     </section>
 
     <!-- About Section -->
-    <section class="success" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>About</h2>
-                    <hr class="star-light">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>The mission of this portfolio is to show some of my projects and a little about me.</p>
-                    <p>And also can give to the user the posibility of interact with the site by a blog or with the contact in where the user can select a new color schema.</p>
-                </div>
-                <div class="col-lg-4">
-                    <p>I'm a Computer Engineering student with interest of different Hardware/Software projects. In Hardware one of the main are the Embedded Systems, and in  Software, one could be the Web Development.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <div class="box">
-                        <p><b>Name:</b> Stephen Varela</p>
-                        <p><b>Phone:</b> +(506)8613-1801</p>
-                        <p><b>Email:</b> ms.varela17@gmail.com</p>
-                        <p><b>ITCR</b></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <?php include '/about/about.php'; ?>
+    
     <!-- Blog Section -->
-    <section id="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Blog</h2>
-                    <hr class="star-primary">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <!-- Blog Post -->
-
-                    <!-- Title -->
-                    <h3>Dynamic Web page "Server Side vs Client Side"</h3>
-
-                    <!-- Author -->
-                    <p class="lead">
-                        by <a href="#page-top">Stephen Varela</a>
-                    </p>
-
-                    <hr>
-
-                    <!-- Date/Time -->
-                    <p><span class="glyphicon glyphicon-time"></span> Posted on February 24, 2015 at 8:46 PM</p>
-
-                    <hr>
-
-                    <!-- Preview Image -->
-                    <img class="img-responsive" src="../../assets/img/angularjs.jpg" alt="">
-
-                    <hr>
-
-                    <!-- Post Content -->
-                    <p class="lead">Importance Of Both Sides:</p>
-                    <p>Most websites make use of both a client side and a server side language. Although there are things both can do, there are some things which can only be done server side, and there are some things which can only be done client side.</p>
-                    <p>Front-end scripting is good for anything that requires user interaction, such as a simple game. Back-end scripting is good for anything that requires dynamic data to be loaded, such as a notice that tells the user they’re logged in.</p>
-
-                    <hr>
-
-                    <!-- Blog Comments -->
-
-                    <!-- Comments Form -->
-                    <div class="well">
-                        <h4>Leave a Comment:</h4>
-                        <form role="form">
-                            <div class="form-group">
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-
-                    <hr>
-
-                    <!-- Posted Comments -->
-
-                    <!-- Comment -->
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img class="media-object" src="http://placehold.it/64x64" alt="">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">Anonymous User
-                                <small>February 24, 2015 at 9:34 PM</small>
-                            </h4>
-                            I really think that client-side is a better way to make an app with user interactivity, because the changes are loaded more faster.
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
+   <?php include '/blog/blog.php'; ?>
 
 
     <!-- Contact Section -->
@@ -587,6 +455,8 @@
             </div>
         </div>
     </div>
+    <?php include '../shared/web/header/headerEnd.php'; ?>
 </body>
+
 
 </html>

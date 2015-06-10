@@ -13,4 +13,11 @@
     <script src="../../assets/libs/bootstrap/jqBootstrapValidation.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../../assets/libs/freelancer/freelancer.js"></script>';
+    <script src="../../assets/libs/freelancer/freelancer.js"></script>
+
+    
+    
+    <script src="blog/blog.js" type="text/javascript"></script>
+';
+   
+   
