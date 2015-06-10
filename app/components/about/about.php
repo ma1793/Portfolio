@@ -9,19 +9,19 @@ echo '  <section class="success" id="about">
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p id="C_mision" style="text-align:justify"></p>
+                    <p id="A_mision" style="text-align:justify"></p>
                   
                 </div>
                 <div class="col-lg-4">
-                    <p id="C_descripcion" style="text-align:justify"></p>
+                    <p id="A_descripcion" style="text-align:justify"></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <div class="box">
-                        <p id="C_nombre"></p>
-                        <p id="C_telefono"></p>
-                        <p id="C_email"></p>
+                        <p id="A_nombre"></p>
+                        <p id="A_telefono"></p>
+                        <p id="A_email"></p>
                         <p ><b>ITCR</b></p>
                     </div>
                 </div>
