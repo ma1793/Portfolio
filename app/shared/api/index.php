@@ -7,10 +7,12 @@ require 'Slim/Slim.php';
 
 $app = new Slim();
 
-$app->get('/contacto', 'getContacto');
+$app->get('/about', 'getAbout');
 $app->get('/blog', 'getBlog');
 $app->get('/blog/comentarios', 'getComentariosBlog');
 $app->post('/blog/comentarios', 'addComentario');
+$app->get('/proyectos', 'getProyectos');
+
 //$app->put('/wines/:id', 'updateWine');
 //$app->delete('/wines/:id',	'deleteWine');
 
@@ -21,14 +23,14 @@ $app->run();
 
 /*About*/
 
-function getContacto() {
-	$sql = "SELECT * FROM contacto";
+function getAbout() {
+	$sql = "SELECT * FROM about";
 	try {
 		$db = getConnection();
 		$stmt = $db->query($sql);  
-		$contacto = $stmt->fetchObject();
+		$about = $stmt->fetchObject();
 		$db = null;
-		echo json_encode($contacto);
+		echo json_encode($about);
 	} catch(PDOException $e) {
 		echo '{"error":{"text":'. $e->getMessage() .'}}'; 
 	}
@@ -75,6 +77,19 @@ function addComentario() {
 		$comentario->idComentario = $db->lastInsertId();
 		$db = null;
 		echo json_encode($comentario); 
+	} catch(PDOException $e) {
+		echo '{"error":{"text":'. $e->getMessage() .'}}'; 
+	}
+}
+/*Proyectos*/
+function getProyectos() {
+	$sql = "SELECT * FROM proyectos";
+	try {
+		$db = getConnection();
+		$stmt = $db->query($sql);  
+		$proyectos = $stmt->fetchAll(PDO::FETCH_OBJ);
+		$db = null;
+                echo json_encode($proyectos);
 	} catch(PDOException $e) {
 		echo '{"error":{"text":'. $e->getMessage() .'}}'; 
 	}

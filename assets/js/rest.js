@@ -9,24 +9,24 @@ findAllElementsMainPage();
 
 
 /*About*/
-function renderContacto(contacto){
-    $('.C_nombreTitulo').text(contacto.nombreTitulo);
-    $('.skills').text(contacto.titulo);
-    $('#C_mision').text(contacto.mision);
-    $('#C_descripcion').text(contacto.descripcion);
-    $('#C_nombre').text(contacto.nombre);
-    $('#C_telefono').text(contacto.telefono);
-    $('#C_email').text(contacto.email);
+function renderAbout(about){
+    $('.A_nombreTitulo').text(about.nombreTitulo);
+    $('.skills').text(about.titulo);
+    $('#A_mision').text(about.mision);
+    $('#A_descripcion').text(about.descripcion);
+    $('#A_nombre').text(about.nombre);
+    $('#A_telefono').text(about.telefono);
+    $('#A_email').text(about.email);
 }
 
-function getContacto() {
-    console.log('getContacto');
+function getAbout() {
+    console.log('getAbout');
     $.ajax({
         type: 'GET',
-        url: rootURL+'/contacto',
+        url: rootURL+'/about',
         dataType: "json", // data type of response
         success: function(data) {
-            renderContacto(data);
+            renderAbout(data);
         }
     });
 }
@@ -74,8 +74,86 @@ function getComentarios() {
         }
     });
 }
+
+/*Portafolio*/
+
+function renderProyectos(proyectos) {
+    // JAX-RS serializes an empty list as null, and a 'collection of one' as an object (not an 'array of one')
+   var list = proyectos == null ? [] : proyectos;
+   $('#portafolioLista').empty();
+   $.each(list, function(index, proyecto) {
+      $('#portafolioLista').append('<div class="col-sm-4 portfolio-item text-center">'+
+                            '<a href="#portfolioModal'+index+ '" class="portfolio-link" data-toggle="modal">'+
+                                '<div class="caption">'+
+                                    '<div class="caption-content">'+
+                                        '<i class="fa fa-search-plus fa-3x"></i>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<img src="'+proyecto.imagenLink+'" class="img-responsive" alt="">'+
+                            '</a>'+
+                        '</div>');
+  });
+  $('#portaforioModals').empty();
+  $.each(list, function(index, proyecto) {
+      $('#portaforioModals').append('<div class="portfolio-modal modal fade" id="portfolioModal'+index+'" tabindex="-1" role="dialog" aria-hidden="true">'+
+            '<div class="modal-content">'+
+                '<div class="close-modal" data-dismiss="modal">'+
+                    '<div class="lr">'+
+                        '<div class="rl">'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="container">'+
+                    '<div class="row">'+
+                        '<div class="col-lg-8 col-lg-offset-2">'+
+                            '<div class="modal-body">'+
+                                '<h2>'+proyecto.titulo+'</h2>'+
+                                '<hr class="star-primary">'+
+                                '<img src="'+proyecto.imagenLink+'" class="img-responsive img-centered" alt="">'+
+                                '<p>'+proyecto.descripcion+'</p>'+
+                                '<ul class="list-inline item-details">'+
+                                    '<li>Client:'+
+                                        '<strong><a href="">'+proyecto.cliente+'</a>'+
+                                        '</strong>'+
+                                    '</li>'+
+                                    '<li>Date:'+
+                                        '<strong><a>'+proyecto.fecha+'</a>'+
+                                        '</strong>'+
+                                    '</li>'+
+                                    '<li>Service:'+
+                                        '<strong><a>'+proyecto.servicio+'</a>'+
+                                        '</strong>'+
+                                    '</li>'+
+                                    '<li>Course:'+
+                                        '<strong><a>'+proyecto.nombreCurso+'</a>'+
+                                        '</strong>'+
+                                    '</li>'+
+                                '</ul>'+
+                                '<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>');
+  });
+}
+
+function getProyectos() {
+    console.log('getProyectos');
+    $.ajax({
+        type: 'GET',
+        url: rootURL+'/proyectos',
+        dataType: "json", // data type of response
+        success: function(data) {
+            renderProyectos(data);
+        }
+    });
+}
+
+
 function findAllElementsMainPage(){
-    getContacto();
+    getAbout();
+    getProyectos();
     getBlog();
-   
 }
