@@ -11,12 +11,12 @@
                             </a>
 
                             <ul class="dropdown-menu">
-                                <li><a tabindex="-1" href="../index.html">Logout</a></li>
+                                <li><a tabindex="-1" href="../../components/portfolio.php">Logout</a></li>
                             </ul>
                         </li>
 
                     </ul>
-                    <a class="brand" href="listPortfolio.html"><span class="second">Admin</span></a>
+                    <a class="brand" href="../../cms/projects/listProjects.php"><span class="second">Admin</span></a>
                 </div>
             </div>
         </div>';

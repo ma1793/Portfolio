@@ -39,7 +39,7 @@
                             <a href="#contact">Contact</a>
                         </li>
                         <li class="page-scroll">
-                            <a href="cms/login.html" data-toggle="modal">Admin</a>
+                            <a href="../cms/login/login.php" data-toggle="modal">Admin</a>
                         </li>
                     </ul>
                 </div>

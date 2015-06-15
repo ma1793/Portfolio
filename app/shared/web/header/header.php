@@ -8,7 +8,7 @@ echo
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="stylesheet" type="text/css" href="../../assets/libs/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/global.css">
     <link rel="stylesheet" href="../../assets/libs/font-awesome/css/font-awesome.css">
     
