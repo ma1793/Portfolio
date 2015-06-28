@@ -2,21 +2,21 @@
 <html lang="en">
     <head>
         <?php include '../../shared/web/header/headerCMS.php'; ?>
-
+       <script src="editProject.js"></script>
     </head>
     <body>
 
         <?php include '../../shared/web/menu/menuCMS.php'; ?>
 
         <div class="container-fluid">
-
             <div class="row-fluid">
                 <?php include '../../shared/web/sidebar/sidebarCMS.php'; ?>
 
                 <div class="span9">
                     <h1 class="page-title">Edit Project</h1>
                     <div class="btn-toolbar">
-                        <button class="btn btn-primary"><i class="icon-save"></i> Save</button>
+                        <button  onclick="updateProyecto()" class="btn btn-primary"><i class="icon-save" ></i> Update </button>
+                        <button  onclick="addProyecto()" class="btn btn-primary"><i class="icon-save" ></i> Save </button>
                         <a href="#myModal" data-toggle="modal" class="btn">Delete</a>
                         <div class="btn-group">
                         </div>
@@ -30,56 +30,31 @@
                             <div class="tab-pane active in" id="home">
                                 <form id="tab">
                                     <label>Title</label>
-                                    <input type="text" value="LOAN SERVICING" >
+                                    <input id="P_titulo" type="text" >
                                     <label>Description</label>
-                                    <textarea rows="6">This project is an Loan Servicing app for JCFInversiones, with this it is possible to create loans, make pays and others. Also it contains differents types of users. for example only the admin user can delete a loan.
+                                    <textarea id="P_descripcion" rows="3" style="width: 75%; ">
                                     </textarea>
                                     <label>Client</label>
-                                    <input type="text" value="JCF INVERSIONES" >
+                                    <input type="text" id="P_cliente" >
                                     <label>Course</label>
-                                    <div class="form-group">
-                                        <select class="form-control" name="category">
-                                            <option value=""></option>
-                                            <option value="0">Project Desing</option>
-                                            <option value="1">Data Bases</option>
-                                            <option value="2">New Course</option>
-                                        </select>     
-
-                                    </div>
-
+                                   <input type="text" id="P_nombreCurso">
                                     <label>Date</label>
-                                    <input type="text" value="February 2015" >
+                                    <input type="date" id="P_fecha">
                                     <label>Service</label>
-                                    <input type="text" value="Web Development" >
-
-
-
+                                    <input type="text" id="P_servicio">
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="profile">
                                 <form id="tab2">
-                                    <label>Upload Picture</label>
-                                    <input type="file" class="input-xlarge">
+                                    <label>Link URL</label>
+                                    <input type="text" id="P_imagenLink" style="width: 75%; ">
                                 </form>
                             </div>
                         </div>
 
                     </div>
 
-                    <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <h3 id="myModalLabel">Delete Confirmation</h3>
-                        </div>
-                        <div class="modal-body">
-
-                            <p class="error-text"><i class="icon-warning-sign modal-icon"></i>Are you sure you want to delete the item?</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-                            <button class="btn btn-danger" data-dismiss="modal">Delete</button>
-                        </div>
-                    </div>
+                                   <?php include '../../shared/web/modal/modalCMS.php'; ?>
 
                 </div>
             </div>
