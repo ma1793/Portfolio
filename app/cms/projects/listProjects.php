@@ -16,7 +16,7 @@
                 <div class="span9">
                     <h1 class="page-title">List of Projects</h1>
                     <div class="btn-toolbar">
-                        <button class="btn btn-primary" onclick="javascript:location.href='../projects/editproject.php?id=0&estado=0'" ><i class="icon-plus"></i> New Project</button>
+                        <button class="btn btn-primary" onclick="javascript:location.href='../projects/editProject.php?id=0&estado=0'" ><i class="icon-plus"></i> New Project</button>
                         <div class="btn-group">
                         </div>
                     </div>

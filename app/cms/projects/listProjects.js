@@ -18,7 +18,7 @@ function renderProyectos(proyectos) {
                                     '<td>'+proyecto.servicio+'</td>'+
                                     '<td>'+proyecto.nombreCurso+'</td>'+
                                     '<td>'+
-                                        '<a href="../projects/editproject.php?id='+proyecto.idProyecto+'&estado=1"><i class="icon-pencil"></i></a><br>'+
+                                        '<a href="../projects/editProject.php?id='+proyecto.idProyecto+'&estado=1"><i class="icon-pencil"></i></a><br>'+
                                         
                                         '<a href="#myModal" onclick="idSeleccionado('+proyecto.idProyecto+')" role="button" data-toggle="modal"><i class="icon-remove"></i></a>'+
                                     '</td>'+
